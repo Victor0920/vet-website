@@ -57,3 +57,25 @@ Huecos disponibles:
 - `app/views/layouts/application.html.erb` — cabecera, pie y botón flotante de WhatsApp.
 - `app/helpers/application_helper.rb` — helpers de WhatsApp y placeholders.
 - `app/assets/stylesheets/` — `variables.css`, `application.css`, `components/`, `views/`.
+
+## Desplegar con Kamal
+
+Requisitos: Docker en tu Mac, un servidor Linux con SSH como `root` (o un usuario con sudo) y un
+dominio apuntando a la IP del servidor.
+
+1. Edita `config/deploy.yml`: IP del servidor (`servers.web`), dominio (`proxy.host`),
+   usuario del registro (`image` y `registry.username`) y `WHATSAPP_NUMBER`.
+2. Exporta el token del registro (Docker Hub → Account settings → Personal access tokens):
+   ```bash
+   export KAMAL_REGISTRY_PASSWORD=dckr_pat_...
+   ```
+3. Primera vez (instala Docker en el servidor, arranca el proxy y despliega):
+   ```bash
+   bin/kamal setup
+   ```
+4. Siguientes despliegues:
+   ```bash
+   bin/kamal deploy
+   ```
+
+Útiles: `bin/kamal logs`, `bin/kamal console`, `bin/kamal shell`, `bin/kamal app details`.

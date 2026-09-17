@@ -8,7 +8,8 @@ module ApplicationHelper
   end
 
   def whatsapp_number
-    Rails.application.config.x.site.whatsapp_number
+    Rails.application.config.x.site.whatsapp_number.presence ||
+      raise("WHATSAPP_NUMBER environment variable is not set")
   end
 
   # Human-readable number for display, e.g. "+34 600 000 000"
