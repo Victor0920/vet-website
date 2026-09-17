@@ -1,0 +1,55 @@
+# Veterinario a Domicilio Aspe — sitio web
+
+Página web de una sola página (landing) para un servicio veterinario a domicilio en Aspe (Alicante).
+Construida con Ruby on Rails 8.1, Propshaft e importmap, igual que el resto de proyectos de la carpeta.
+
+## Arrancar en local
+
+```bash
+bundle install
+bin/rails server
+```
+
+Abre http://localhost:3000.
+
+## Cambiar el número de WhatsApp
+
+Edita `config/initializers/site.rb`:
+
+```ruby
+Rails.application.config.x.site.whatsapp_number = "34600000000"  # formato internacional, solo dígitos
+```
+
+También puedes cambiar ahí el nombre del negocio y la zona de servicio.
+
+## Añadir las imágenes
+
+Las imágenes están vacías a propósito. Cada hueco está marcado con el helper
+`image_placeholder("...")` en `app/views/pages/home.html.erb`.
+
+1. Guarda la imagen en `app/assets/images/` (por ejemplo `hero.jpg`).
+2. Sustituye la llamada al placeholder por un `image_tag`:
+
+```erb
+<%# antes %>
+<%= image_placeholder("Imagen principal: veterinario con mascota en casa", css_class: "img-placeholder--hero") %>
+
+<%# después %>
+<%= image_tag "hero.jpg", alt: "Veterinario atendiendo a un perro en casa", class: "hero__image" %>
+```
+
+Huecos disponibles:
+
+| Sección            | Placeholder                                | Tamaño sugerido |
+|--------------------|--------------------------------------------|-----------------|
+| Hero               | Imagen principal                           | 1200 × 900      |
+| Servicios (×6)     | Icono de cada servicio                     | 144 × 144       |
+| Por qué a domicilio| Mascota tranquila en casa                  | 900 × 1200      |
+| Zona               | Mapa de la zona de servicio                | 1600 × 700      |
+
+## Estructura
+
+- `app/views/pages/home.html.erb` — todo el contenido de la página.
+- `app/views/layouts/application.html.erb` — cabecera, pie y botón flotante de WhatsApp.
+- `app/helpers/application_helper.rb` — helpers de WhatsApp y placeholders.
+- `app/assets/stylesheets/` — `variables.css`, `application.css`, `components/`, `views/`.

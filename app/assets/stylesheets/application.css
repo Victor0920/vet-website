@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-body);
+  color: var(--color-ink);
+  line-height: 1.6;
+}
+
+main {
+  width: 100%;
+  max-width: var(--width-main);
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-md);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--color-primary-dark);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 var(--spacing-md);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--color-ink-muted);
+}
+
+/* Empty image placeholders — replace with image_tag once real images exist */
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-placeholder);
+  border: 2px dashed var(--color-placeholder-border);
+  border-radius: var(--radius-md);
+  color: var(--color-ink-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.img-placeholder--hero {
+  aspect-ratio: 4 / 3;
+}
+
+.img-placeholder--tall {
+  aspect-ratio: 3 / 4;
+}
+
+.img-placeholder--wide {
+  aspect-ratio: 16 / 7;
+  margin-top: var(--spacing-xl);
+}
+
+.card .img-placeholder {
+  width: 72px;
+  height: 72px;
+  aspect-ratio: 1 / 1;
+  font-size: 0.65rem;
+  margin-bottom: var(--spacing-lg);
+}

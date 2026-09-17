@@ -1,0 +1,22 @@
+/* Floating WhatsApp button, bottom-right corner */
+.whatsapp-fab {
+  position: fixed;
+  right: var(--spacing-xl);
+  bottom: var(--spacing-xl);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-whatsapp);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.06);
+  background-color: var(--color-whatsapp-dark);
+}

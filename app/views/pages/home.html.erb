@@ -1,0 +1,119 @@
+<%# ---------- HERO ---------- %>
+<section class="hero">
+  <div class="hero__text">
+    <p class="eyebrow">Veterinario a domicilio · <%= site_area %></p>
+    <h1>Tu veterinario viene a casa</h1>
+    <p class="lead">
+      Atención veterinaria profesional en la comodidad de tu hogar.
+      Sin desplazamientos, sin salas de espera y sin estrés para tu mascota.
+    </p>
+    <div class="hero__actions">
+      <%= link_to "Pedir cita por WhatsApp", whatsapp_url, class: "btn btn--primary", target: "_blank", rel: "noopener" %>
+      <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+    </div>
+  </div>
+  <%= image_placeholder("Imagen principal: veterinario con mascota en casa", css_class: "img-placeholder--hero") %>
+</section>
+
+<%# ---------- SERVICIOS ---------- %>
+<section id="servicios" class="section">
+  <h2>Servicios</h2>
+  <p class="section__intro">Todo lo que tu mascota necesita, sin salir de casa.</p>
+
+  <div class="cards">
+    <article class="card">
+      <%= image_placeholder("Icono: consulta general") %>
+      <h3>Consulta general</h3>
+      <p>Revisiones, diagnóstico y tratamiento de enfermedades comunes en perros y gatos.</p>
+    </article>
+
+    <article class="card">
+      <%= image_placeholder("Icono: vacunación") %>
+      <h3>Vacunación</h3>
+      <p>Calendario de vacunas completo, cartilla sanitaria y recordatorios de revacunación.</p>
+    </article>
+
+    <article class="card">
+      <%= image_placeholder("Icono: desparasitación") %>
+      <h3>Desparasitación</h3>
+      <p>Prevención y tratamiento de parásitos internos y externos adaptado a cada animal.</p>
+    </article>
+
+    <article class="card">
+      <%= image_placeholder("Icono: microchip") %>
+      <h3>Microchip e identificación</h3>
+      <p>Implantación de microchip y gestión del registro obligatorio de tu mascota.</p>
+    </article>
+
+    <article class="card">
+      <%= image_placeholder("Icono: mascotas mayores") %>
+      <h3>Cuidado de mascotas mayores</h3>
+      <p>Seguimiento de animales senior y enfermedades crónicas con la tranquilidad de estar en casa.</p>
+    </article>
+
+    <article class="card">
+      <%= image_placeholder("Icono: eutanasia") %>
+      <h3>Despedida en casa</h3>
+      <p>Acompañamiento en los últimos momentos, con respeto y en el entorno que tu mascota conoce.</p>
+    </article>
+  </div>
+</section>
+
+<%# ---------- CÓMO FUNCIONA ---------- %>
+<section id="como-funciona" class="section section--alt">
+  <h2>Cómo funciona</h2>
+  <ol class="steps">
+    <li class="step">
+      <span class="step__number">1</span>
+      <h3>Escríbenos</h3>
+      <p>Cuéntanos por WhatsApp qué le pasa a tu mascota y dónde vives.</p>
+    </li>
+    <li class="step">
+      <span class="step__number">2</span>
+      <h3>Concertamos la visita</h3>
+      <p>Acordamos día y hora que te venga bien. Sin esperas ni desplazamientos.</p>
+    </li>
+    <li class="step">
+      <span class="step__number">3</span>
+      <h3>Vamos a tu casa</h3>
+      <p>Llegamos con todo el material necesario y atendemos a tu mascota en su entorno.</p>
+    </li>
+  </ol>
+</section>
+
+<%# ---------- POR QUÉ A DOMICILIO ---------- %>
+<section class="section split">
+  <%= image_placeholder("Imagen: mascota tranquila en casa", css_class: "img-placeholder--tall") %>
+  <div>
+    <h2>¿Por qué un veterinario a domicilio?</h2>
+    <ul class="benefits">
+      <li><strong>Menos estrés</strong> — sin transportín, sin coche y sin sala de espera con otros animales.</li>
+      <li><strong>Más comodidad</strong> — ideal para familias con varias mascotas, personas mayores o con movilidad reducida.</li>
+      <li><strong>Atención personalizada</strong> — tiempo y dedicación para tu mascota, sin prisas.</li>
+      <li><strong>Menos riesgo de contagio</strong> — evitamos el contacto con otros animales enfermos.</li>
+    </ul>
+  </div>
+</section>
+
+<%# ---------- ZONA ---------- %>
+<section id="zona" class="section section--alt">
+  <h2>Zona de servicio</h2>
+  <p class="section__intro">
+    Atendemos en <strong>Aspe</strong> y las localidades cercanas de la comarca del Medio Vinalopó y el
+    área de Alicante: Novelda, Monforte del Cid, Hondón de las Nieves, Elche, Crevillente, Elda, Petrer y alrededores.
+  </p>
+  <p class="section__intro">¿No aparece tu localidad? Pregúntanos, seguramente podamos llegar.</p>
+  <%= image_placeholder("Imagen: mapa de la zona de servicio", css_class: "img-placeholder--wide") %>
+</section>
+
+<%# ---------- CONTACTO ---------- %>
+<section id="contacto" class="section contact">
+  <h2>Contacto</h2>
+  <p class="lead">
+    Pide cita o resuelve tus dudas por WhatsApp. Te responderemos lo antes posible.
+  </p>
+  <%= link_to whatsapp_url, class: "btn btn--primary btn--large", target: "_blank", rel: "noopener" do %>
+    Escríbenos por WhatsApp · <%= whatsapp_number_display %>
+  <% end %>
+  <p class="contact__note">Horario de atención: lunes a sábado. Urgencias, consultar disponibilidad.</p>
+</section>
