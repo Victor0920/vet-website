@@ -24,6 +24,9 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # json 3.x changed JSON.parse's signature and breaks ActiveSupport 8.1 session decoding
 gem "json", "~> 2.19"
 
+# Custom Added
+gem "dotenv-rails", groups: [ :development, :test ]
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

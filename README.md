@@ -14,13 +14,17 @@ Abre http://localhost:3000.
 
 ## Cambiar el número de WhatsApp
 
-Edita `config/initializers/site.rb`:
+El número se lee de la variable de entorno `WHATSAPP_NUMBER`. En desarrollo se carga desde `.env`
+(gema `dotenv-rails`, el fichero no se sube a git):
 
-```ruby
-Rails.application.config.x.site.whatsapp_number = "34600000000"  # formato internacional, solo dígitos
+```bash
+cp .env.example .env
+# edita .env
+WHATSAPP_NUMBER=34600000000   # formato internacional, solo dígitos
 ```
 
-También puedes cambiar ahí el nombre del negocio y la zona de servicio.
+En producción define `WHATSAPP_NUMBER` en el entorno del servidor.
+El nombre del negocio y la zona de servicio se cambian en `config/initializers/site.rb`.
 
 ## Añadir las imágenes
 
