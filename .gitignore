@@ -33,3 +33,24 @@
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+
+# Ignore SQLite databases anywhere (db/*.sqlite3 in older layouts).
+/db/*.sqlite3
+/db/*.sqlite3-*
+
+# Ignore macOS and editor files.
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore node artifacts, in case JS tooling is ever added.
+/node_modules
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+# Ignore local coverage and test artifacts.
+/coverage
+/test/screenshots
