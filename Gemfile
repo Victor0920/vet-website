@@ -22,7 +22,7 @@ gem "stimulus-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # json 3.x changed JSON.parse's signature and breaks ActiveSupport 8.1 session decoding
-gem "json", "~> 2.19"
+gem "json", "~> 3.0"
 
 # Custom Added
 gem "dotenv-rails", groups: [ :development, :test ]
